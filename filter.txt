@@ -1,0 +1,31 @@
+
+###### .select : Write only one 'column name'.
+###### .target : (X == A*,B,C...) or (get_values()) or (X > 1) or (X <= -2) or (-1 < X <=3)
+###### .do : 'and'(target1 and target2, skippable) or 'or'(target1 or target2) or 'get'(Get 'target' only) or 'cut'(Remove 'target') or 'abs*[column]*'(absolute value) or 'set_values*[column]*'(other values on target)
+
+###### Ex.)
+###### .select : Legend
+###### .target : X == B,A,C
+###### (.do : and)	< skippable
+###### .select : Current
+###### .target : 1<X<51
+###### .do : get
+
+###### .select : Current
+###### .target : 1<X<51
+###### .do : abs*[DC]*
+
+/*
+.select : Voltage
+.target : X>15
+.do : set_values*[Legend]*
+
+.select : Legend
+.target : get_values()
+.do : cut
+*/
+
+.select : Voltage
+.target : 0 < X < 9
+.do : get
+
